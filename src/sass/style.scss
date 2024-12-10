@@ -9,6 +9,7 @@ html {
 }
 
 body {
+	font-family: "Poppins", serif;
 	background: rgb(4, 102, 200);
 	background: linear-gradient(
 		45deg,
@@ -26,6 +27,17 @@ body {
 	flex-direction: column;
 	height: 100vh;
 	
+	&__editor-container {
+		width: 800px;
+		background: white;
+		border-radius: 20px;
+	}
+
+	&__contents {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
 	
 	&__image-random {
 		width: 100px;
