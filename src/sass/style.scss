@@ -7,3 +7,12 @@
 html {
 	font-size: 62.5%;
 }
+
+.editor {
+	display: flex;
+
+	&__image {
+		width: 100px;
+		height: 200px;
+	}
+}
