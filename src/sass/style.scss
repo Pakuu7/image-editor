@@ -8,10 +8,26 @@ html {
 	font-size: 62.5%;
 }
 
+body {
+	background: rgb(4, 102, 200);
+	background: linear-gradient(
+		45deg,
+		rgba(4, 102, 200, 0.3981967787114846) 0%,
+		rgba(98, 154, 209, 1) 0%,
+		rgba(221, 221, 221, 1) 100%,
+		rgba(172, 195, 216, 1) 100%
+	);
+}
+
 .editor {
 	display: flex;
-
-	&__image {
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	
+	
+	&__image-random {
 		width: 100px;
 		height: 200px;
 	}
