@@ -8,6 +8,11 @@ html {
 	font-size: 62.5%;
 }
 
+:root {
+	--light-gray: #c4c4c4;
+	--medium-blue: #2450ca;
+}
+
 body {
 	font-family: "Poppins", serif;
 	background: rgb(4, 102, 200);
@@ -28,19 +33,119 @@ body {
 	height: 100vh;
 	
 	&__editor-container {
-		width: 800px;
+		padding: 4em 3em;
 		background: white;
 		border-radius: 20px;
+		max-width: 1200px;
+	}
+
+	&__title {
+		font-size: 2.6rem;
+		font-weight: 600;
 	}
 
 	&__contents {
 		display: flex;
 		justify-content: space-around;
+		padding-top: 2em;
+	}
+
+	&__filters {
+		border: 1px solid var(--light-gray);
+		padding: 3em;
+		border-radius: 16px;
+		margin-right: 1em;
+	}
+
+	&__filter-title, &__brightness-title, &__additional-title, &__brightness-value {
+		font-size: 1.8rem;
+		font-weight: 500;
+		margin-bottom: 1rem;
+	}
+
+	&__brightness-title, &__additional-title, &__brightness-value {
+		margin-top: 1.6rem;
+	}
+
+	&__filter-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+
+	&__filter-button {
+		background: none;
+		border: 1px solid var(--light-gray);
+		border-radius: 6px;
+		padding: 1em 2em;
+		font-size: 1.6rem;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #4f7fd6;
+			color: white;
+		}
+	}
+
+	&__inverstion-title-container {
+		display: flex;
+		justify-content: space-between;
 		align-items: center;
+	}
+
+	&__brightness-slider {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	&__additional-options-container {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 5px;
+	}
+
+	&__option {
+		padding: .8em 1.6em;
+		background: none;
+		border: 1px solid var(--light-gray);
+		border-radius: 6px;
+		cursor: pointer;
+	}
+	&__image {
+		margin-left: 1em;
 	}
 	
 	&__image-random {
-		width: 100px;
-		height: 200px;
+		height: 100%;
+		max-width: 100%;
+		border-radius: 16px;
+	}
+
+	&__general-options {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__general-option {
+		margin-top: 2em;
+		padding: 1em 2em;
+		font-size: 1.4rem;
+		background: none;
+		border: 1px solid var(--light-gray);
+		border-radius: 6px;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&--choose {
+			background: var(--light-gray);
+			color: white;
+		}
+		
+		&--save {
+			background-color: var(--medium-blue);
+			color: white;
+		}
+
 	}
 }

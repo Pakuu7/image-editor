@@ -10,6 +10,7 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap"
 			rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/336bb66908.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div class="editor">
@@ -18,21 +19,35 @@
 				<div class="editor__contents">
 					<div class="editor__filters">
 						<div class="editor__filter-options">
-							<button class="editor__filter-button editor__filter-button--brightness">Brightness</button>
-							<button class="editor__filter-button editor__filter-button--saturation">Saturation</button>
-							<button class="editor__filter-button editor__filter-button--inversion">Inversion</button>
-							<button class="editor__filter-button editor__filter-button--grayscale">Grayscale</button>
+							<div class="editor__filter-title-container">
+								<h2 class="editor__filter-title">Filters</h2>
+							</div>
+							<div class="editor__filter-container">
+								<button class="editor__filter-button editor__filter-button--brightness">Brightness</button>
+								<button class="editor__filter-button editor__filter-button--saturation">Saturation</button>
+								<button class="editor__filter-button editor__filter-button--inversion">Inversion</button>
+								<button class="editor__filter-button editor__filter-button--grayscale">Grayscale</button>
+							</div>
 						</div>
-						<div class="editor__inversion">
-							<h1>Inversion</h1>
-							<input type="range" class="editor__inversion-slider" min="0" max="100" value="0" />
-							<span class="editor__inversion-value">0%</span>
+						<div class="editor__brightness">
+							<div class="editor__inverstion-title-container">
+								<h3 class="editor__brightness-title">Brightness</h3>
+								<span class="editor__brightness-value">0%</span>
+							</div>
+							<div class="editor__brightness-slider-container">
+								<input type="range" class="editor__brightness-slider" min="0" max="200" value="100" />
+							</div>
 						</div>
 						<div class="editor__additional-options">
-							<button class="editor__option editor__option--left">left</button>
-							<button class="editor__option editor__option--right">right</button>
-							<button class="editor__option editor__option--x">X</button>
-							<button class="editor__option editor__option--y">Y</button>
+							<div class="editor__additional-title-container">
+								<h2 class="editor__additional-title">Rotate & Flip</h2>
+							</div>
+							<div class="editor__additional-options-container">
+								<button class="editor__option editor__option--left"><i class="fa-solid fa-rotate-left"></i></button>
+								<button class="editor__option editor__option--right"><i class="fa-solid fa-rotate-right"></i></button>
+								<button class="editor__option editor__option--horizontal"><i class="fa-solid fa-left-right"></i></button>
+								<button class="editor__option editor__option--vertical"><i class="fa-solid fa-arrows-up-down"></i></button>
+							</div>
 						</div>
 					</div>
 					<div class="editor__image">
@@ -41,11 +56,11 @@
 				</div>
 				<div class="editor__general-options">
 					<div class="editor__filter-option">
-						<button class="editor__filter-reset">Reset filters</button>
+						<button class="editor__general-option editor__general-option--reset">Reset filters</button>
 					</div>
 					<div class="editor__image-option">
-						<button class="editor__image-choose">Choose image</button>
-						<button class="editor__image-save">Save image</button>
+						<button class="editor__general-option editor__general-option--choose">Choose image</button>
+						<button class="editor__general-option editor__general-option--save">Save image</button>
 					</div>
 				</div>
 			</div>
