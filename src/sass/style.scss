@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -10,11 +11,12 @@ html {
 
 :root {
 	--light-gray: #c4c4c4;
-	--medium-blue: #2450ca;
+	--light-gray-hover: #f0f0f0;
+	--medium-blue: #005cc8;
+	--medium-blue-hover: #4083cf;
 }
 
 body {
-	font-family: "Poppins", serif;
 	background: rgb(4, 102, 200);
 	background: linear-gradient(
 		45deg,
@@ -25,15 +27,19 @@ body {
 	);
 }
 
+.hidden {
+	display: none;
+}
+
 .editor {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	height: 100vh;
-	
+
 	&__editor-container {
-		padding: 4em 3em;
+		padding: 6em 4em;
 		background: white;
 		border-radius: 20px;
 		max-width: 1200px;
@@ -51,20 +57,28 @@ body {
 	}
 
 	&__filters {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 		border: 1px solid var(--light-gray);
 		padding: 3em;
 		border-radius: 16px;
 		margin-right: 1em;
 	}
 
-	&__filter-title, &__brightness-title, &__additional-title, &__brightness-value {
-		font-size: 1.8rem;
+	&__filter-title,
+	&__scrollbar-title,
+	&__additional-title,
+	&__scrollbar-value {
+		font-size: 2.2rem;
 		font-weight: 500;
-		margin-bottom: 1rem;
+		margin-bottom: 1.4rem;
 	}
 
-	&__brightness-title, &__additional-title, &__brightness-value {
-		margin-top: 1.6rem;
+	&__scrollbar-title,
+	&__additional-title,
+	&__scrollbar-value {
+		margin-top: 2rem;
 	}
 
 	&__filter-container {
@@ -78,12 +92,16 @@ body {
 		border: 1px solid var(--light-gray);
 		border-radius: 6px;
 		padding: 1em 2em;
-		font-size: 1.6rem;
+		font-size: 1.8rem;
 		cursor: pointer;
+	}
 
+	&__filter-button,
+	&__option {
 		&:hover {
 			background-color: #4f7fd6;
 			color: white;
+			transition: background-color 0.3s, color 0.3s;
 		}
 	}
 
@@ -93,7 +111,7 @@ body {
 		align-items: center;
 	}
 
-	&__brightness-slider {
+	&__scrollbar-slider {
 		width: 100%;
 		cursor: pointer;
 	}
@@ -106,19 +124,32 @@ body {
 	}
 
 	&__option {
-		padding: .8em 1.6em;
+		padding: 1.4em 2em;
 		background: none;
 		border: 1px solid var(--light-gray);
 		border-radius: 6px;
 		cursor: pointer;
+
+		i {
+			font-size: 1.8rem;
+		}
 	}
 	&__image {
 		margin-left: 1em;
+		position: relative;
+		width: 100%;
+		height: auto;
+		max-height: 60vh;
 	}
-	
+
+	&__canvas {
+		display: none;
+	}
+
 	&__image-random {
 		height: 100%;
 		max-width: 100%;
+		object-fit: contain;
 		border-radius: 16px;
 	}
 
@@ -130,22 +161,39 @@ body {
 	&__general-option {
 		margin-top: 2em;
 		padding: 1em 2em;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		background: none;
 		border: 1px solid var(--light-gray);
 		border-radius: 6px;
+		font-weight: 500;
 		text-transform: uppercase;
 		cursor: pointer;
+
+		&--reset {
+			&:hover {
+				background-color: var(--light-gray-hover);
+				transition: background-color 0.3s, color 0.3s;
+			}
+		}
 
 		&--choose {
 			background: var(--light-gray);
 			color: white;
+
+			&:hover {
+				background-color: var(--light-gray-hover);
+				transition: background-color 0.3s, color 0.3s;
+			}
 		}
-		
+
 		&--save {
 			background-color: var(--medium-blue);
 			color: white;
-		}
 
+			&:hover {
+				background-color: var(--medium-blue-hover);
+				transition: background-color 0.3s;
+			}
+		}
 	}
 }

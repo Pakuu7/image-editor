@@ -8,7 +8,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 			rel="stylesheet" />
 		<script src="https://kit.fontawesome.com/336bb66908.js" crossorigin="anonymous"></script>
 	</head>
@@ -29,13 +29,13 @@
 								<button class="editor__filter-button editor__filter-button--grayscale">Grayscale</button>
 							</div>
 						</div>
-						<div class="editor__brightness">
+						<div class="editor__scrollbar">
 							<div class="editor__inverstion-title-container">
-								<h3 class="editor__brightness-title">Brightness</h3>
-								<span class="editor__brightness-value">0%</span>
+								<h3 class="editor__scrollbar-title">Brightness</h3>
+								<span class="editor__scrollbar-value"></span>
 							</div>
-							<div class="editor__brightness-slider-container">
-								<input type="range" class="editor__brightness-slider" min="0" max="200" value="100" />
+							<div class="editor__scrollbar-container">
+								<input type="range" class="editor__scrollbar-slider" min="0" max="200" value="100" />
 							</div>
 						</div>
 						<div class="editor__additional-options">
@@ -45,13 +45,18 @@
 							<div class="editor__additional-options-container">
 								<button class="editor__option editor__option--left"><i class="fa-solid fa-rotate-left"></i></button>
 								<button class="editor__option editor__option--right"><i class="fa-solid fa-rotate-right"></i></button>
-								<button class="editor__option editor__option--horizontal"><i class="fa-solid fa-left-right"></i></button>
-								<button class="editor__option editor__option--vertical"><i class="fa-solid fa-arrows-up-down"></i></button>
+								<button class="editor__option editor__option--horizontal">
+									<i class="fa-solid fa-left-right"></i>
+								</button>
+								<button class="editor__option editor__option--vertical">
+									<i class="fa-solid fa-arrows-up-down"></i>
+								</button>
 							</div>
 						</div>
 					</div>
 					<div class="editor__image">
-						<img src="dist/img/random-image.jpg" class="editor__image-random" alt="random-image" />
+						<img src="dist/img/no-img.png" class="editor__image-random" alt="random-image" />
+						<canvas class="editor__canvas"></canvas>
 					</div>
 				</div>
 				<div class="editor__general-options">
@@ -59,6 +64,7 @@
 						<button class="editor__general-option editor__general-option--reset">Reset filters</button>
 					</div>
 					<div class="editor__image-option">
+						<input type="file" accept="image/*" class="editor__general-option editor__general-option--file hidden" />
 						<button class="editor__general-option editor__general-option--choose">Choose image</button>
 						<button class="editor__general-option editor__general-option--save">Save image</button>
 					</div>
@@ -66,6 +72,6 @@
 			</div>
 		</div>
 
-		<script src="/dist/js/main.min.js"></script>
 	</body>
+	<script src="/dist/js/main.min.js"></script>
 </html>
